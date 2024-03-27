@@ -1,5 +1,3 @@
-# uniapp-bubble
-
 ## props
 
 <table class="table table-bordered table-striped">
@@ -64,39 +62,41 @@
   </tbody>
 </table>
 
+
 ## Ref
 
-数据加载慢的情况下使用 ref 初始化一下
+数据加载慢的情况下使用ref 初始化一下
 this.$refs.bubbleRef.init()
 
-## 正确写法
 
+## 正确写法
 ```js
-<div style="margin-left:100px">
-  <bubble position="bottom">
-    <template v-slot:tag>
-      <image style="width: 77px;height: 77px;" src="/static/logo.png"></image>
-    </template>
-    <template v-slot:content>
-      <view>内容asaaas</view>
-    </template>
-  </bubble>
-</div>
+   <div style="margin-left:100px">
+	   <bubble position="bottom" >
+			<template v-slot:tag>
+				 <image style="width: 77px;height: 77px;" src="/static/logo.png"></image>
+			</template>
+			<template v-slot:content>
+				<view>
+						 内容asaaas
+				</view>
+			 </template>
+   	 </bubble>
+   </div>
 ```
 
-## 错误写法
 
+## 错误写法
 ```js
-<bubble position="bottom">
-  <template v-slot:tag>
-    这里不要 padding margin 类型的位置css
-    <image
-      style="width: 77px;height: 77px;margin-left:100px"
-      src="/static/logo.png"
-    ></image>
-  </template>
-  <template v-slot:content>
-    <view>内容asaaas</view>
-  </template>
-</bubble>
+   <bubble position="bottom" >
+				<template v-slot:tag>
+				                      这里不要 padding margin 类型的位置css
+					<image style="width: 77px;height: 77px;margin-left:100px" src="/static/logo.png"></image>
+				</template>
+				<template v-slot:content>
+					<view>
+						 内容asaaas
+					</view>
+		 </template>
+	 </bubble>
 ```
